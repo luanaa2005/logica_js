@@ -4,9 +4,11 @@ const frm = document.querySelector("form");
 
 const resp = document.querySelector("h3");
 // cria um "ouvinte" de evento, acionado quando o botão submit for clicado 
+frm.addEventListener("submit", executar);
 
-frm.addEventListener("submit", (e) => {
+function executar(evento) {
     const nome = frm.inNome.value; //obtém o nome digitado no form
-     resp.innerText = `Olá ${nome}`; // exibe a resposta do programa
-     e.preventDefault(); // vai evitar que o form envie os dados pro destino.php
-});
+    resp.innerHTML = `Olá <i>${nome}</i>`; // exibe a resposta do programa
+    evento.preventDefault(); // vai evitar que o form envie os dados pro destino.php
+}
+    
